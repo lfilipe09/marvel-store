@@ -4,7 +4,7 @@ import { darken } from 'polished'
 
 export type WrapperProps = { hasIcon: boolean } & Pick<
   ButtonProps,
-  'size' | 'fullWidth' | 'minimal'
+  'size' | 'fullWidth' | 'minimal' | 'color'
 >
 
 const wrapperModifiers = {
@@ -57,10 +57,10 @@ const wrapperModifiers = {
 }
 
 export const Wrapper = styled.button<WrapperProps>`
-  ${({ theme, size, fullWidth, hasIcon, minimal, disabled }) => css`
+  ${({ theme, size, fullWidth, hasIcon, minimal, disabled, color }) => css`
     background: ${theme.colors.black};
     cursor: pointer;
-    color: ${theme.colors.white};
+    color: ${color === 'black' ? theme.colors.white : theme.colors.black};
     border: 0;
     font-family: ${theme.font.family};
     padding: ${theme.spacings.xxsmall};
@@ -69,6 +69,7 @@ export const Wrapper = styled.button<WrapperProps>`
     align-items: center;
     position: relative;
     transition: all 0.3s;
+    width: fit-content;
     justify-content: center;
     overflow: hidden;
     z-index: 1;
@@ -79,7 +80,9 @@ export const Wrapper = styled.button<WrapperProps>`
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: ${theme.colors.black};
+      background-color: ${color === 'black'
+        ? theme.colors.black
+        : theme.colors.white};
       z-index: -2;
     }
     &:before {
