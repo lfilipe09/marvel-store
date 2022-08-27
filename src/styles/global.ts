@@ -14,6 +14,34 @@ const GlobalStyles: GlobalStyleComponent<
   GlobalStylesProps,
   DefaultTheme
 > = createGlobalStyle`
+
+  @font-face {
+  font-family: 'GothamPro';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local(''),
+      url('/fonts/GothamPro-Light.woff2') format('woff2'),
+  }
+
+  @font-face {
+    font-family: 'GothamPro';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local(''),
+        url('/fonts/GothamPro.woff2') format('woff2'),
+  }
+
+  @font-face {
+    font-family: 'GothamPro';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: local(''),
+        url('/fonts/GothamPro-Bold.woff2') format('woff2'),
+  }
+
   * {
     margin: 0;
     padding: 0;
@@ -30,12 +58,6 @@ const GlobalStyles: GlobalStyleComponent<
 
   html {
     font-size: 62.5%;
-  }
-  html, body {
-    height: 100%;
-  }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
   }
 `
 
