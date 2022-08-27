@@ -4,8 +4,8 @@ import media from 'styled-media-query'
 export const Wrapper = styled.main`
   display: flex;
   flex-direction: column-reverse;
+  height: 44rem;
   ${media.greaterThan('medium')`
-    min-height: 40rem;
     display: grid;
     grid-template-columns: 1fr 1.5fr;
   `}
@@ -63,5 +63,6 @@ export const ImageContainer = styled.div<ImageContainerProps>`
     background-image: url(${imgUrl});
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center center;
   `}
 `

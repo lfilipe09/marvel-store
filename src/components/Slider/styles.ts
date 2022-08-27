@@ -87,4 +87,7 @@ export const Wrapper = styled.section`
   .slick-arrow.slick-hidden {
     display: none;
   }
+  .slick-dots li {
+    background: #c3c3c3;
+  }
 `

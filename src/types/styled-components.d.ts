@@ -14,6 +14,7 @@ declare module 'styled-components' {
     }
     font: {
       family: string
+      family_secondary: string
       light: number
       normal: number
       bold: number

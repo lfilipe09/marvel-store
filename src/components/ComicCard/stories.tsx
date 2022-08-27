@@ -8,6 +8,8 @@ export default {
   args: {
     imgUrl:
       'https://i.annihil.us/u/prod/marvel/i/mg/3/40/4bb4680432f73/portrait_fantastic.jpg',
+    title:
+      'Marvel Masterworks: The Fantastic Four Vol. V - Variant 2nd Edition (1st) (Trade Paperback)',
     slug: '/',
     id: '1'
   },

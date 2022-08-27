@@ -12,15 +12,15 @@ export type ComicCardSliderProps = {
 }
 
 const settings: SliderSettings = {
-  slidesToShow: 4,
+  slidesToShow: 5.2,
   infinite: false,
   lazyLoad: 'ondemand',
   responsive: [
     {
-      breakpoint: 1375,
+      breakpoint: 1200,
       settings: {
         arrows: false,
-        slidesToShow: 5.2
+        slidesToShow: 4.8
       }
     },
     {

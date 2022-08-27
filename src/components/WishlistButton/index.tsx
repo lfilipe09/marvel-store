@@ -5,7 +5,7 @@ import Spinner from 'components/Spinner'
 import { useState } from 'react'
 
 type WishlistButtonProps = {
-  id: string
+  id: number
   hasText?: boolean
 } & Pick<ButtonProps, 'size'>
 

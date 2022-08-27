@@ -7,6 +7,7 @@ export const Wrapper = styled.a`
   width: 19rem;
   height: 27rem;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  margin-bottom: 1rem;
 `
 
 export const FavButton = styled.div`
@@ -31,5 +32,25 @@ export const ImageContent = styled.div<ImageContentProps>`
     background-image: url(${imgUrl});
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
+  `}
+`
+
+export const TitleWrapper = styled.div`
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.6);
+  bottom: 0;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  button {
+    padding: 0px;
+    grid-gap: 0px;
+  }
+`
+export const Title = styled.h2`
+  ${({ theme }) => css`
+    font-size: ${theme.font.sizes.small};
+    color: ${theme.colors.white};
+    line-height: 1.8rem; ;
   `}
 `
