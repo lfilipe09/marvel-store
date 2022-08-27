@@ -43,7 +43,9 @@ const Menu = ({ loading }: MenuProps) => {
               </S.LoginIcon>
             </MediaMatch>
             <MediaMatch greaterThan="medium">
-              <Button as="a">Login</Button>
+              <Button color={'white'} as="a" href={'/'} size="medium">
+                Login
+              </Button>
             </MediaMatch>
           </S.MenuGroup>
 

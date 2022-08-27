@@ -1,13 +1,17 @@
 import styled, { css } from 'styled-components'
+import media from 'styled-media-query'
 
 export const Wrapper = styled.a`
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 19rem;
+  width: 14rem;
   height: 27rem;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   margin-bottom: 1rem;
+  ${media.greaterThan('medium')`
+    width: 19rem;
+  `}
 `
 
 export const FavButton = styled.div`
