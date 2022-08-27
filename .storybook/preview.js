@@ -13,6 +13,10 @@ export const parameters = {
       {
         name: 'bornlogic-dark',
         value: theme.colors.black
+      },
+      {
+        name: 'bornlogic-primary',
+        value: theme.colors.primary
       }
     ]
   }
