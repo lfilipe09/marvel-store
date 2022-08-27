@@ -33,7 +33,7 @@ export const withIcon: Story<ButtonProps> = (args) => <Button {...args} />
 
 withIcon.args = {
   children: 'Acesse agora',
-  icon: <ArrowRight size={'3rem'} strokeWidth={'3px '} />
+  icon: <ArrowRight size={'3rem'} strokeWidth={'2px'} />
 }
 
 export const asLink: Story<ButtonProps> = (args) => <Button {...args} />

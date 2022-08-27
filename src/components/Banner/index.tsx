@@ -28,7 +28,7 @@ const Banner = ({
           as="a"
           href={buttonLink}
           size="large"
-          icon={<ArrowRight size={'3rem'} strokeWidth={'3px '} />}
+          icon={<ArrowRight size={'3rem'} strokeWidth={'2px'} />}
         >
           {buttonLabel}
         </Button>

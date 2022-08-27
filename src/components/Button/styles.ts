@@ -29,7 +29,7 @@ const wrapperModifiers = {
   withIcon: (theme: DefaultTheme) => css`
     grid-gap: 2rem;
     svg {
-      width: 1.5rem;
+      width: 2.5rem;
       & + span {
         margin-left: ${theme.spacings.xxsmall};
       }
@@ -39,7 +39,7 @@ const wrapperModifiers = {
     background: none;
     color: ${theme.colors.primary};
     &:hover {
-      color: ${darken(0.5, theme.colors.primary)};
+      color: ${darken(0.2, theme.colors.primary)};
     }
     &:after {
       background-color: transparent;
