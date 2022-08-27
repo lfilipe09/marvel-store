@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react'
 import { Search } from '@styled-icons/feather'
 import { BannerProps } from 'components/Banner'
 import BannerSlider from 'components/BannerSlider'
@@ -8,7 +9,6 @@ import Footer from 'components/Footer'
 import Heading from 'components/Heading'
 import Menu from 'components/Menu'
 import TextField from 'components/TextField'
-import React, { useEffect, useState } from 'react'
 import { heroBannerMapper, mainCardsMapper } from 'utils/mappers'
 import { fetchAPIData } from '../../services/api'
 
@@ -18,11 +18,11 @@ export type ComicProps = {
   heroBanner: BannerProps[]
   mainCards: ComicCardProps[]
   secondaryCards: ComicCardProps[]
-  collectionCards: ComicCardProps[]
 }
 
 export function Home() {
   const [comics, setComics] = useState<ComicProps>()
+  const [collection, setCollection] = useState<ComicCardProps[]>([])
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
@@ -36,9 +36,9 @@ export function Home() {
       setComics({
         heroBanner,
         mainCards,
-        secondaryCards,
-        collectionCards
+        secondaryCards
       })
+      setCollection(collectionCards)
       setLoading(false)
     }
     callDataAPI()
@@ -88,13 +88,13 @@ export function Home() {
                 </Heading>
                 <TextField
                   icon={<Search size={'1.5rem'} strokeWidth={2} />}
-                  placeholder={'Busque aqui sua comics'}
+                  placeholder={'Busque sua comics'}
                   inputHeight={'small'}
                   outsideIcon={true}
                 />
               </S.CollectionHeaderWrapper>
               <S.CollectionItemsWrapper>
-                {comics?.collectionCards.map((card) => (
+                {collection.map((card) => (
                   <ComicCard
                     key={card.id}
                     imgUrl={card.imgUrl}
