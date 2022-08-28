@@ -4,6 +4,7 @@ import { Container } from 'components/Container'
 import Footer from 'components/Footer'
 import Heading from 'components/Heading'
 import Menu from 'components/Menu'
+import WishlistButton from 'components/WishlistButton'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { fetchAPIData } from 'services/api'
@@ -107,56 +108,79 @@ export function Comics() {
               <Menu />
             </Container>
           </S.MenuWrapper>
-          <S.ComicDataWrapper>
-            <S.ImageContent imgUrl={comic.imgUrl} />
-            <S.ContentWrapper>
-              <S.MainInfo>
-                <Heading color={'black'}>{comic.title}</Heading>
-                <S.Description>{comic.description}</S.Description>
-                <S.VariantDescription>
-                  {comic.variantDescription}
-                </S.VariantDescription>
-              </S.MainInfo>
-              <S.IconGroupWrapper>
-                <S.IconTitleWrapper>
-                  <Box />
-                  <S.IconTextContent>
-                    <S.IconTitle>Format</S.IconTitle>
-                    <S.IconDescription>{comic.format}</S.IconDescription>
-                  </S.IconTextContent>
-                </S.IconTitleWrapper>
+          <Container>
+            <S.ComicDataWrapper>
+              <S.ImageContent imgUrl={comic.imgUrl} />
+              <S.ContentWrapper>
+                <S.MainInfo>
+                  <Heading color={'black'}>{comic.title}</Heading>
+                  <WishlistButton hasText={true} id={comic.id} size={'small'} />
+                  {comic.description && (
+                    <S.Description>
+                      <div
+                        dangerouslySetInnerHTML={{ __html: comic.description }}
+                      />
+                    </S.Description>
+                  )}
 
-                <S.IconTitleWrapper>
-                  <Book />
-                  <S.IconTextContent>
-                    <S.IconTitle>Number of pages</S.IconTitle>
-                    <S.IconDescription>{comic.pageCount}</S.IconDescription>
-                  </S.IconTextContent>
-                </S.IconTitleWrapper>
-              </S.IconGroupWrapper>
+                  {comic.variantDescription && (
+                    <S.VariantDescription>
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: comic.variantDescription
+                        }}
+                      />
+                    </S.VariantDescription>
+                  )}
+                </S.MainInfo>
+                <S.IconGroupWrapper>
+                  <S.IconTitleWrapper>
+                    <Box />
+                    <S.IconTextContent>
+                      <S.IconTitle>Format</S.IconTitle>
+                      <S.IconDescription>{comic.format}</S.IconDescription>
+                    </S.IconTextContent>
+                  </S.IconTitleWrapper>
 
-              <S.CreatorWrapper>
-                <S.IconTitle>Creators</S.IconTitle>
-                {comic.creators?.map((creator) => (
-                  <S.CreatorInfoWrapper key={creator.id}>
-                    <S.CreatorTitle>
-                      {creator.firstName}
-                      <b>{creator.lastName}</b>
-                    </S.CreatorTitle>
-                    <Button
-                      minimal
-                      size={'small'}
-                      as={'a'}
-                      href={creator.url}
-                      icon={<ArrowRight size={'1.5rem'} strokeWidth={'1px'} />}
-                    >
-                      Veja mais
-                    </Button>
-                  </S.CreatorInfoWrapper>
-                ))}
-              </S.CreatorWrapper>
-            </S.ContentWrapper>
-          </S.ComicDataWrapper>
+                  {comic.pageCount > 0 && (
+                    <S.IconTitleWrapper>
+                      <Book />
+                      <S.IconTextContent>
+                        <S.IconTitle>Number of pages</S.IconTitle>
+                        <S.IconDescription>{comic.pageCount}</S.IconDescription>
+                      </S.IconTextContent>
+                    </S.IconTitleWrapper>
+                  )}
+                </S.IconGroupWrapper>
+                {comic.creators && comic.creators.length > 0 && (
+                  <S.CreatorWrapper>
+                    <S.IconTitle>Creators</S.IconTitle>
+                    <S.CreatorMainWrapper>
+                      {comic.creators?.map((creator) => (
+                        <S.CreatorInfoWrapper key={creator.id}>
+                          <S.CreatorTitle>
+                            {creator.firstName}&nbsp;
+                            <b>{creator.lastName}</b>
+                          </S.CreatorTitle>
+                          <Button
+                            minimal
+                            size={'small'}
+                            as={'a'}
+                            href={creator.url}
+                            icon={
+                              <ArrowRight size={'1.5rem'} strokeWidth={'1px'} />
+                            }
+                          >
+                            Veja mais
+                          </Button>
+                        </S.CreatorInfoWrapper>
+                      ))}
+                    </S.CreatorMainWrapper>
+                  </S.CreatorWrapper>
+                )}
+              </S.ContentWrapper>
+            </S.ComicDataWrapper>
+          </Container>
           <Container>
             <Footer />
           </Container>
