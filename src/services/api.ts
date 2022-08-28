@@ -1,5 +1,4 @@
 import axios from 'axios'
-import { APIComics } from 'types/api/comic-types'
 
 export const api = axios.create({
   baseURL:
@@ -12,6 +11,9 @@ type FetchAPIDataProps = {
   total?: number
   count?: number
   titleStartsWith?: string
+  comicId?: string
+  creatorId?: number
+  characterId?: number
 }
 
 export const fetchAPIData = async ({
@@ -19,10 +21,15 @@ export const fetchAPIData = async ({
   limit,
   total,
   titleStartsWith,
-  count
+  count,
+  comicId,
+  creatorId,
+  characterId
 }: FetchAPIDataProps) => {
-  const comicData = await api.get<APIComics>(
-    `http://gateway.marvel.com/v1/public/comics?ts=1&${
+  const comicData = await api.get(
+    `http://gateway.marvel.com/v1/public/comics${comicId ? `/${comicId}` : ''}${
+      creatorId ? `/${creatorId}/creators` : ''
+    }${characterId ? `/${characterId}/characters` : ''}?ts=1&${
       offset ? `offset=${offset}&` : ''
     }${
       titleStartsWith && titleStartsWith !== ''

@@ -122,3 +122,144 @@ export type APIComics = {
     results: Comics[]
   }
 }
+
+export type ItemCreatorProps = {
+  resourceURI: string
+  name: string
+}
+
+export type ItemStoryCreatorProps = {
+  resourceURI: string
+  name: string
+  type: string
+}
+
+export type CreatorUrlProps = {
+  type: string
+  url: string
+}
+
+export type CreatorComics = {
+  id: number
+  firstName: string
+  middleName: string
+  lastName: string
+  suffix: string
+  fullName: string
+  modified: string
+  thumbnail: {
+    path: string
+    extension: string
+  }
+  resourceURI: string
+  comics: {
+    available: number
+    collectionURI: string
+    items: ItemCreatorProps[]
+    returned: number
+  }
+  series: {
+    available: number
+    collectionURI: string
+    items: ItemCreatorProps[]
+    returned: number
+  }
+  stories: {
+    available: number
+    collectionURI: string
+    items: ItemStoryCreatorProps[]
+    returned: number
+  }
+  events: {
+    available: number
+    collectionURI: string
+    items: ItemCreatorProps[]
+    returned: number
+  }
+  urls: CreatorUrlProps[]
+}
+
+export type APICreatorComics = {
+  code: number
+  status: string
+  copyright: string
+  attributionText: string
+  attributionHTML: string
+  etag: string
+  data: {
+    offset: number
+    limit: number
+    total: number
+    count: number
+    results: CreatorComics[]
+  }
+}
+
+export type ItemCharacterProps = {
+  resourceURI: string
+  name: string
+}
+
+export type ItemStoryCharacterProps = {
+  resourceURI: string
+  name: string
+  type: string
+}
+
+export type CharacterUrlProps = {
+  type: string
+  url: string
+}
+
+export type CharacterComics = {
+  id: number
+  name: string
+  description: string
+  modified: string
+  thumbnail: {
+    path: string
+    extension: string
+  }
+  resourceURI: string
+  comics: {
+    available: number
+    collectionURI: string
+    items: ItemCharacterProps[]
+    returned: number
+  }
+  series: {
+    available: number
+    collectionURI: string
+    items: ItemCharacterProps[]
+    returned: number
+  }
+  stories: {
+    available: number
+    collectionURI: string
+    items: ItemStoryCharacterProps[]
+    returned: number
+  }
+  events: {
+    available: number
+    collectionURI: string
+    items: ItemCharacterProps[]
+    returned: number
+  }
+  urls: CharacterUrlProps[]
+}
+
+export type APICharacterComics = {
+  code: number
+  status: string
+  copyright: string
+  attributionText: string
+  attributionHTML: string
+  etag: string
+  data: {
+    offset: number
+    limit: number
+    total: number
+    count: number
+    results: CharacterComics[]
+  }
+}

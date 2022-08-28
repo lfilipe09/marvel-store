@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { ChevronLeft, ChevronRight } from '@styled-icons/feather'
 import { useState } from 'react'
 import * as S from './styles'
@@ -6,9 +6,14 @@ import * as S from './styles'
 export type PaginationProps = {
   numberOfPages: number
   onPageChange?: (value: number) => void
+  inputSearchTerm?: string
 }
 
-const Pagination = ({ numberOfPages, onPageChange }: PaginationProps) => {
+const Pagination = ({
+  numberOfPages,
+  onPageChange,
+  inputSearchTerm
+}: PaginationProps) => {
   const [page, setPage] = useState(1)
 
   function ValidateEnterPress(e: React.KeyboardEvent) {
@@ -16,6 +21,11 @@ const Pagination = ({ numberOfPages, onPageChange }: PaginationProps) => {
       page && page <= numberOfPages ? onPageChange?.(page) : setPage(1)
     }
   }
+
+  useEffect(() => {
+    console.log('executei')
+    setPage(1)
+  }, [inputSearchTerm])
 
   return (
     <S.Wrapper>

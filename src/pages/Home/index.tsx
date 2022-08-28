@@ -40,10 +40,10 @@ export function Home() {
   useEffect(() => {
     async function callDataAPI() {
       setLoading(true)
-      const comicsData = await fetchAPIData({})
-      const heroBanner = heroBannerMapper(comicsData).slice(0, 4)
-      const mainCards = mainCardsMapper(comicsData).slice(5, 11)
-      const secondaryCards = mainCardsMapper(comicsData).slice(12, 20)
+      const comicsData = await fetchAPIData({ limit: 30 })
+      const heroBanner = heroBannerMapper(comicsData).slice(0, 6)
+      const mainCards = mainCardsMapper(comicsData).slice(7, 15)
+      const secondaryCards = mainCardsMapper(comicsData).slice(16, 25)
       const collectionCards = mainCardsMapper(comicsData)
       setComics({
         heroBanner,
@@ -62,7 +62,10 @@ export function Home() {
 
   useEffect(() => {
     const delayDebounceFn = setTimeout(async () => {
-      const comicsData = await fetchAPIData({ titleStartsWith: searchTerm })
+      const comicsData = await fetchAPIData({
+        titleStartsWith: searchTerm,
+        limit: 30
+      })
       const collectionCards = mainCardsMapper(comicsData)
       setCollection(collectionCards)
       setPagination({
@@ -146,17 +149,20 @@ export function Home() {
               </S.CollectionItemsWrapper>
               <S.PaginationWrapper>
                 <Pagination
-                  numberOfPages={Math.floor(pagination.total / 20)}
+                  numberOfPages={Math.ceil(pagination.total / 30)}
                   onPageChange={async (pageNumber) => {
+                    console.log()
                     setSearchLoading(true)
                     const comicsData = await fetchAPIData(
                       !searchTerm || searchTerm === ''
                         ? {
-                            offset: (pageNumber - 1) * 20
+                            offset: (pageNumber - 1) * 30,
+                            limit: 30
                           }
                         : {
-                            offset: (pageNumber - 1) * 20,
-                            titleStartsWith: searchTerm
+                            offset: (pageNumber - 1) * 30,
+                            titleStartsWith: searchTerm,
+                            limit: 30
                           }
                     )
                     const collectionCards = mainCardsMapper(comicsData)
@@ -167,6 +173,7 @@ export function Home() {
                     })
                     setSearchLoading(false)
                   }}
+                  inputSearchTerm={searchTerm}
                 />
               </S.PaginationWrapper>
             </Container>
