@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, screen } from 'utils/test-utils'
 
-import GameCard from '.'
+import ComicCard from '.'
 
 const props = {
   imgUrl:
@@ -11,9 +11,9 @@ const props = {
   title: 'example'
 }
 
-describe('<GameCard />', () => {
+describe('<ComicCard />', () => {
   it('should render correctly', () => {
-    render(<GameCard {...props} />)
+    render(<ComicCard {...props} />)
 
     expect(
       screen.getByRole('heading', { name: props.title })
