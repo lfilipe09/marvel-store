@@ -1,5 +1,4 @@
 import React from 'react'
-import { format } from 'date-fns'
 import _ from 'lodash'
 import { createContext, ReactNode, useContext, useState } from 'react'
 import { User, UserForm, WishlistUser } from 'types/userTypes'
@@ -13,7 +12,12 @@ export type UserProps = {
   users: User[]
   validateUser: (email: string, password: string) => void
   createUser: (user: UserForm) => void
-  updateWishlist: (email: string, data: WishlistUser[]) => void
+  getUserByEmail: (email: string) => User | null
+  updateWishlist: (
+    email: string,
+    data: WishlistUser,
+    operation: 'delete' | 'add'
+  ) => void
 }
 
 export const UserContext = createContext<UserProps>({} as UserProps)
@@ -65,7 +69,7 @@ export function UserProvider({ children }: UserProviderProps) {
           {
             ...user,
             id: new Date().getTime().toString(16),
-            created_at: format(new Date(), 'dd/MM/yyyy HH:mm').toString(),
+            created_at: new Date().toISOString(),
             wishlist: []
           }
         ])
@@ -74,7 +78,7 @@ export function UserProvider({ children }: UserProviderProps) {
           {
             ...user,
             id: new Date().getTime().toString(16),
-            created_at: format(new Date(), 'dd/MM/yyyy HH:mm').toString(),
+            created_at: new Date().toISOString(),
             wishlist: []
           }
         ]
@@ -85,7 +89,27 @@ export function UserProvider({ children }: UserProviderProps) {
     }
   }
 
-  const updateWishlist = (email: string, data: WishlistUser[]) => {
+  const getUserByEmail = (email: string) => {
+    const AllUsers: User[] = getStorageItem('users')
+
+    if (AllUsers === null) {
+      return null
+    }
+
+    const UserExist = AllUsers.find((userStored) => userStored.email === email)
+
+    if (!UserExist) {
+      return null
+    }
+
+    return UserExist
+  }
+
+  const updateWishlist = (
+    email: string,
+    data: WishlistUser,
+    operation: 'delete' | 'add'
+  ) => {
     try {
       let newUsers = [...users]
       const UserToChange = newUsers.find(
@@ -94,6 +118,16 @@ export function UserProvider({ children }: UserProviderProps) {
       if (!UserToChange) {
         return null
       } else {
+        let newWishlist = []
+
+        if (operation === 'add') {
+          newWishlist = [...UserToChange.wishlist, data]
+        } else {
+          newWishlist = UserToChange.wishlist.filter(
+            (singleWishlist) => singleWishlist.id !== data.id
+          )
+        }
+
         const newUserChanged: User = {
           cpf: UserToChange.cpf,
           email: UserToChange.email,
@@ -101,7 +135,7 @@ export function UserProvider({ children }: UserProviderProps) {
           name: UserToChange.name,
           password: UserToChange.password,
           surname: UserToChange.surname,
-          wishlist: data ?? UserToChange.wishlist,
+          wishlist: newWishlist,
           created_at: UserToChange.created_at
         }
         if (!_.isEqual(UserToChange, newUserChanged)) {
@@ -122,6 +156,7 @@ export function UserProvider({ children }: UserProviderProps) {
     <UserContext.Provider
       value={{
         updateWishlist,
+        getUserByEmail,
         users,
         createUser,
         validateUser

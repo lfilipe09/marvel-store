@@ -6,6 +6,7 @@ import { Comics } from 'pages/Comics'
 import { Empty } from 'pages/Empty'
 import Login from 'pages/Login'
 import Signup from 'pages/Signup'
+import Profile from 'pages/Profile'
 
 const Routes = (): JSX.Element => {
   return (
@@ -14,6 +15,7 @@ const Routes = (): JSX.Element => {
       <Route path="comics/:id/:name" element={<Comics />} />
       <Route path="login" element={<Login />} />
       <Route path="signup" element={<Signup />} />
+      <Route path="profile" element={<Profile />} />
       <Route path="*" element={<Empty />} />
     </Switch>
   )

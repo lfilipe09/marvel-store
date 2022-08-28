@@ -38,7 +38,7 @@ const Menu = ({ loading }: MenuProps) => {
               <S.LoginIcon>
                 <Button
                   as="a"
-                  href={'/login'}
+                  href={'/profile'}
                   icon={<User aria-label={'Add to Wishlist'} />}
                   minimal
                 ></Button>
@@ -48,7 +48,7 @@ const Menu = ({ loading }: MenuProps) => {
               <Button
                 color={'white'}
                 as="a"
-                href={'/login'}
+                href={'/profile'}
                 size="medium"
                 icon={<User aria-label={'Add to Wishlist'} size={'2rem'} />}
               >

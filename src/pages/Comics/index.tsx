@@ -15,6 +15,7 @@ import {
   singleComicCreatorsMapper,
   singleComicMapper
 } from 'utils/mappers'
+import { convertToSlug } from 'utils/slug'
 
 import * as S from './styles'
 
@@ -124,7 +125,18 @@ export function Comics() {
               <S.ContentWrapper>
                 <S.MainInfo>
                   <Heading color={'black'}>{comic.title}</Heading>
-                  <WishlistButton hasText={true} id={comic.id} size={'small'} />
+                  <WishlistButton
+                    hasText={true}
+                    wishlistItem={{
+                      id: comic.id,
+                      title: comic.title,
+                      imgUrl: comic.imgUrl,
+                      slug: `comics/${params.id}/${convertToSlug(
+                        params.name as string
+                      )}`
+                    }}
+                    size={'small'}
+                  />
                   {comic.description && (
                     <S.Description>
                       <div

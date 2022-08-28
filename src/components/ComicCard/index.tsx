@@ -16,7 +16,7 @@ export type ComicCardProps = {
 const ComicCard = ({ id, slug, imgUrl, title }: ComicCardProps) => (
   <S.Wrapper href={slug}>
     <S.FavButton>
-      <WishlistButton id={id} />
+      <WishlistButton wishlistItem={{ id, imgUrl, slug, title }} />
     </S.FavButton>
 
     <S.TitleWrapper>

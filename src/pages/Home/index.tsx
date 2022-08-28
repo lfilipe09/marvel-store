@@ -50,11 +50,12 @@ export function Home() {
   useEffect(() => {
     async function callDataAPI() {
       setLoading(true)
-      const comicsData = await fetchAPIData({ limit: 30 })
-      const heroBanner = heroBannerMapper(comicsData).slice(0, 6)
-      const mainCards = mainCardsMapper(comicsData).slice(7, 15)
+      const comicsData = await fetchAPIData({ limit: 30, offset: 80 })
+      const collectionData = await fetchAPIData({ limit: 30 })
+      const heroBanner = heroBannerMapper(comicsData).slice(7, 15)
+      const mainCards = mainCardsMapper(comicsData).slice(0, 6)
       const secondaryCards = mainCardsMapper(comicsData).slice(16, 25)
-      const collectionCards = mainCardsMapper(comicsData)
+      const collectionCards = mainCardsMapper(collectionData)
       setComics({
         heroBanner,
         mainCards,

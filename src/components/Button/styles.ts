@@ -60,7 +60,9 @@ export const Wrapper = styled.button<WrapperProps>`
   ${({ theme, size, fullWidth, hasIcon, minimal, disabled, color }) => css`
     background: ${theme.colors.black};
     cursor: pointer;
-    color: ${color === 'black' ? theme.colors.white : theme.colors.black};
+    color: ${color === 'black' || color === 'primary'
+      ? theme.colors.white
+      : theme.colors.black};
     border: 0;
     font-family: ${theme.font.family};
     padding: ${theme.spacings.xxsmall};
@@ -82,6 +84,8 @@ export const Wrapper = styled.button<WrapperProps>`
       height: 100%;
       background-color: ${color === 'black'
         ? theme.colors.black
+        : color === 'primary'
+        ? theme.colors.primary
         : theme.colors.white};
       z-index: -2;
     }
@@ -92,7 +96,9 @@ export const Wrapper = styled.button<WrapperProps>`
       left: 0;
       width: 0%;
       height: 100%;
-      background-color: ${theme.colors.primary};
+      background-color: ${color === 'primary'
+        ? theme.colors.black
+        : theme.colors.primary};
       transition: all 0.3s;
       z-index: -1;
     }
