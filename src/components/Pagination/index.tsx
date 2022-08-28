@@ -23,7 +23,6 @@ const Pagination = ({
   }
 
   useEffect(() => {
-    console.log('executei')
     setPage(1)
   }, [inputSearchTerm])
 

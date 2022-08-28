@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Container } from 'components/Container'
 import FormSignUp from 'components/FormSignUp'
 import { useUser } from '../../hooks/useUser'
@@ -10,9 +10,17 @@ import { useNavigate } from 'react-router-dom'
 import Heading from 'components/Heading'
 
 const Signup = () => {
+  const { validateAuth } = useAuth()
   const { createUser } = useUser()
   const { createAuth } = useAuth()
   const navigate = useNavigate()
+
+  useEffect(() => {
+    const session = validateAuth()
+    session && navigate('/')
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   return (
     <S.WrapperImg>
       <S.Wrapper>

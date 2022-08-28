@@ -45,8 +45,14 @@ const Menu = ({ loading }: MenuProps) => {
               </S.LoginIcon>
             </MediaMatch>
             <MediaMatch greaterThan="medium">
-              <Button color={'white'} as="a" href={'/login'} size="medium">
-                Login
+              <Button
+                color={'white'}
+                as="a"
+                href={'/login'}
+                size="medium"
+                icon={<User aria-label={'Add to Wishlist'} size={'2rem'} />}
+              >
+                Profile
               </Button>
             </MediaMatch>
           </S.MenuGroup>

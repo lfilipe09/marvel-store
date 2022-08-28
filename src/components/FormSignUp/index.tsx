@@ -18,8 +18,7 @@ const FormSignUp = ({ onSubmit }: FormSignUpProps) => {
     email: '',
     name: '',
     password: '',
-    surname: '',
-    profile: 'Administrador'
+    surname: ''
   })
 
   const handleInput = (field: string, value: string) => {

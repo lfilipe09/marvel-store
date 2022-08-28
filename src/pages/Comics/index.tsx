@@ -6,8 +6,9 @@ import Heading from 'components/Heading'
 import Menu from 'components/Menu'
 import ShowCardSlider from 'components/ShowCardSlider'
 import WishlistButton from 'components/WishlistButton'
+import { useAuth } from 'hooks/useAuth'
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { fetchAPIData } from 'services/api'
 import {
   singleComicCharacterMapper,
@@ -48,9 +49,17 @@ export type SingleComicProps = {
 }
 
 export function Comics() {
+  const { validateAuth } = useAuth()
+  const navigate = useNavigate()
   const params = useParams()
   const [comic, setComic] = useState<SingleComicProps>({} as SingleComicProps)
   const [loading, setLoading] = useState(false)
+
+  useEffect(() => {
+    const session = validateAuth()
+    !session && navigate('/login')
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   useEffect(() => {
     async function callDataAPI() {

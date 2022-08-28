@@ -15,6 +15,8 @@ import { fetchAPIData } from '../../services/api'
 import * as S from './styles'
 import Pagination from 'components/Pagination'
 import Spinner from 'components/Spinner'
+import { useAuth } from 'hooks/useAuth'
+import { useNavigate } from 'react-router-dom'
 
 export type ComicProps = {
   heroBanner: BannerProps[]
@@ -28,6 +30,8 @@ export type PaginationProps = {
 }
 
 export function Home() {
+  const { validateAuth } = useAuth()
+  const navigate = useNavigate()
   const [comics, setComics] = useState<ComicProps>()
   const [collection, setCollection] = useState<ComicCardProps[]>([])
   const [pagination, setPagination] = useState<PaginationProps>(
@@ -36,6 +40,12 @@ export function Home() {
   const [searchTerm, setSearchTerm] = useState('')
   const [loading, setLoading] = useState(false)
   const [searchLoading, setSearchLoading] = useState(false)
+
+  useEffect(() => {
+    const session = validateAuth()
+    !session && navigate('/login')
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   useEffect(() => {
     async function callDataAPI() {

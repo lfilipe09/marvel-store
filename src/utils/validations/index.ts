@@ -5,8 +5,7 @@ import {
   email_schema,
   name_schema,
   password_schema,
-  surname_schema,
-  profile_schema
+  surname_schema
 } from './errors'
 
 const fieldsValidations = {
@@ -14,8 +13,7 @@ const fieldsValidations = {
   email: email_schema,
   name: name_schema,
   password: password_schema,
-  surname: surname_schema,
-  profile: profile_schema
+  surname: surname_schema
 }
 
 export type FieldErrors = {
@@ -35,8 +33,8 @@ function getUserErrors(objError: Joi.ValidationResult) {
 }
 
 export function UserValidate(values: UserForm) {
-  const { cpf, email, name, password, surname, profile } = fieldsValidations
-  const schema = Joi.object({ cpf, email, name, password, surname, profile })
+  const { cpf, email, name, password, surname } = fieldsValidations
+  const schema = Joi.object({ cpf, email, name, password, surname })
 
   return getUserErrors(schema.validate(values, { abortEarly: false }))
 }
