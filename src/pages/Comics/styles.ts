@@ -20,9 +20,9 @@ export const ComicDataWrapper = styled.div`
     display: flex;
     flex-direction: column;
     grid-gap: ${theme.spacings.small};
-    ${media.greaterThan('medium')`
+    ${media.greaterThan('large')`
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 646px;
     `}
   `}
 `
@@ -38,7 +38,7 @@ export const ImageContent = styled.div<ImageContentProps>`
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    ${media.greaterThan('medium')`
+    ${media.greaterThan('large')`
       width: 27rem;
       height: 41rem;
       position: -webkit-sticky;
@@ -132,11 +132,12 @@ export const CreatorWrapper = styled.div`
 `
 
 export const CreatorInfoWrapper = styled.div`
-  ${() => css`
-    display: flex;
-    flex-direction: column;
-    grid-gap: 0.4rem;
-  `}
+  display: flex;
+  flex-direction: column;
+  grid-gap: 0.4rem;
+  a {
+    padding: 0;
+  }
 `
 
 export const CreatorTitle = styled.p`
@@ -146,4 +147,11 @@ export const CreatorTitle = styled.p`
 export const CreatorMainWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
+  grid-gap: 2rem;
+`
+
+export const CarouselWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  grid-gap: 3rem;
 `

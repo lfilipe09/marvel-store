@@ -33,7 +33,7 @@ export const singleComicMapper = (comicsData: APIComics) => {
     id: comic.id,
     imgUrl: comic.thumbnail.path.includes('image_not_available')
       ? 'https://i.ibb.co/gZk8B85/marvel-empty-Prancheta-1.png'
-      : `${comic.thumbnail.path}/portrait_fantastic.${comic.thumbnail.extension}`,
+      : `${comic.thumbnail.path}/detail.${comic.thumbnail.extension}`,
     title: comic.title,
     description: comic.description,
     variantDescription: comic.variantDescription,
@@ -69,8 +69,8 @@ export const singleComicCharacterMapper = (
   return characterData.data.results.map((character) => ({
     imgUrl: character.thumbnail.path.includes('image_not_available')
       ? 'https://i.ibb.co/gZk8B85/marvel-empty-Prancheta-1.png'
-      : `${character.thumbnail.path}/detail.${character.thumbnail.extension}`,
-    name: character.name,
-    url: character.urls[0].url
+      : `${character.thumbnail.path}/landscape_incredible.${character.thumbnail.extension}`,
+    title: character.name,
+    slug: character.urls[0].url
   }))
 }

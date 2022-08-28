@@ -2,7 +2,8 @@ export default [
   {
     imgUrl:
       'https://i.annihil.us/u/prod/marvel/i/mg/3/40/4bb4680432f73/portrait_fantastic.jpg',
-    slug: '/'
+    slug: '/',
+    title: 'Example'
   },
   {
     imgUrl:

@@ -12,7 +12,7 @@ export type ShowCardSliderProps = {
 }
 
 const settings: SliderSettings = {
-  slidesToShow: 3.2,
+  slidesToShow: 1.8,
   infinite: false,
   responsive: [
     {

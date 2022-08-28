@@ -4,6 +4,7 @@ import { Container } from 'components/Container'
 import Footer from 'components/Footer'
 import Heading from 'components/Heading'
 import Menu from 'components/Menu'
+import ShowCardSlider from 'components/ShowCardSlider'
 import WishlistButton from 'components/WishlistButton'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
@@ -17,8 +18,7 @@ import {
 import * as S from './styles'
 
 export type GalleryProps = {
-  path?: string
-  extension?: string
+  imgUrl: string
 }
 
 export type CreatorProps = {
@@ -29,9 +29,9 @@ export type CreatorProps = {
 }
 
 export type CharacterProps = {
-  imgUrl?: string
-  name?: string
-  url?: string
+  imgUrl: string
+  title?: string
+  slug?: string
 }
 
 export type SingleComicProps = {
@@ -85,8 +85,9 @@ export function Comics() {
         format: singleComic[0].format,
         pageCount: singleComic[0].pageCount,
         gallery: singleComic[0].gallery.map((image) => ({
-          path: image.path,
-          extension: image.extension
+          imgUrl: image.path.includes('image_not_available')
+            ? 'https://i.ibb.co/gZk8B85/marvel-empty-Prancheta-1.png'
+            : `${image.path}/landscape_incredible.${image.extension}`
         })),
         creators: singleComicCreators,
         characters: singleCharacterCreators
@@ -177,6 +178,20 @@ export function Comics() {
                       ))}
                     </S.CreatorMainWrapper>
                   </S.CreatorWrapper>
+                )}
+                {comic.gallery && comic.gallery.length > 0 && (
+                  <S.CarouselWrapper>
+                    <S.IconTitle>Gallery</S.IconTitle>
+
+                    <ShowCardSlider items={comic.gallery} color={'black'} />
+                  </S.CarouselWrapper>
+                )}
+                {comic.characters && comic.characters.length > 0 && (
+                  <S.CarouselWrapper>
+                    <S.IconTitle>Characters</S.IconTitle>
+
+                    <ShowCardSlider items={comic.characters} color={'black'} />
+                  </S.CarouselWrapper>
                 )}
               </S.ContentWrapper>
             </S.ComicDataWrapper>
