@@ -5,6 +5,7 @@ import Footer from 'components/Footer'
 import Heading from 'components/Heading'
 import Menu from 'components/Menu'
 import ShowCardSlider from 'components/ShowCardSlider'
+import Spinner from 'components/Spinner'
 import WishlistButton from 'components/WishlistButton'
 import { useAuth } from 'hooks/useAuth'
 import React, { useEffect, useState } from 'react'
@@ -111,7 +112,9 @@ export function Comics() {
   return (
     <>
       {loading ? (
-        <h1>Loading</h1>
+        <S.LoadingWrapper>
+          <Spinner />
+        </S.LoadingWrapper>
       ) : (
         <S.Wrapper>
           <S.MenuWrapper>

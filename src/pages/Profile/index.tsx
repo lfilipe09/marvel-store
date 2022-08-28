@@ -72,17 +72,25 @@ const Profile = () => {
               Wishlist
             </Heading>
           </S.WishlistTitleWrapper>
-          <S.UserWishlistItemsWrapper>
-            {user?.wishlist.map((comic) => (
-              <ComicCard
-                key={comic.id}
-                imgUrl={comic.imgUrl}
-                id={comic.id}
-                slug={comic.slug}
-                title={comic.title}
-              />
-            ))}
-          </S.UserWishlistItemsWrapper>
+          {user?.wishlist.length !== 0 && (
+            <S.UserWishlistItemsWrapper>
+              {user?.wishlist.map((comic) => (
+                <ComicCard
+                  key={comic.id}
+                  imgUrl={comic.imgUrl}
+                  id={comic.id}
+                  slug={comic.slug}
+                  title={comic.title}
+                />
+              ))}
+            </S.UserWishlistItemsWrapper>
+          )}
+          {user?.wishlist.length === 0 && (
+            <S.EmptyWrapper>
+              <S.Empty src={'/img/empty.png'} />
+              <S.EmptyMessage>Oops, Your wishlist is empty!</S.EmptyMessage>
+            </S.EmptyWrapper>
+          )}
         </S.UserWishlistWrapper>
       </Container>
       <Container>

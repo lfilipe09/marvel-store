@@ -164,3 +164,11 @@ export const CarouselWrapper = styled.div`
   flex-direction: column;
   grid-gap: 3rem;
 `
+
+export const LoadingWrapper = styled.div`
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`

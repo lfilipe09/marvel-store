@@ -92,7 +92,9 @@ export function Home() {
   return (
     <>
       {loading ? (
-        <h1>Loading</h1>
+        <S.LoadingWrapper>
+          <Spinner />
+        </S.LoadingWrapper>
       ) : (
         <S.Wrapper>
           <S.MenuWrapper>

@@ -84,3 +84,24 @@ export const UserWishlistItemsWrapper = styled.div`
     }
   `}
 `
+
+export const EmptyWrapper = styled.div`
+  height: 38rem;
+  grid-gap: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+`
+
+export const Empty = styled.img`
+  width: 25rem;
+`
+
+export const EmptyMessage = styled.p`
+  ${({ theme }) => css`
+    color: ${theme.colors.black};
+    font-size: ${theme.font.sizes.xlarge};
+  `}
+`
