@@ -13,6 +13,8 @@ import { heroBannerMapper, mainCardsMapper } from 'utils/mappers'
 import { fetchAPIData } from '../../services/api'
 
 import * as S from './styles'
+import Pagination from 'components/Pagination'
+import Spinner from 'components/Spinner'
 
 export type ComicProps = {
   heroBanner: BannerProps[]
@@ -20,10 +22,20 @@ export type ComicProps = {
   secondaryCards: ComicCardProps[]
 }
 
+export type PaginationProps = {
+  offset: number
+  total: number
+}
+
 export function Home() {
   const [comics, setComics] = useState<ComicProps>()
   const [collection, setCollection] = useState<ComicCardProps[]>([])
+  const [pagination, setPagination] = useState<PaginationProps>(
+    {} as PaginationProps
+  )
+  const [searchTerm, setSearchTerm] = useState('')
   const [loading, setLoading] = useState(false)
+  const [searchLoading, setSearchLoading] = useState(false)
 
   useEffect(() => {
     async function callDataAPI() {
@@ -39,10 +51,29 @@ export function Home() {
         secondaryCards
       })
       setCollection(collectionCards)
+      setPagination({
+        offset: comicsData.data.offset,
+        total: comicsData.data.total
+      })
       setLoading(false)
     }
     callDataAPI()
   }, [])
+
+  useEffect(() => {
+    const delayDebounceFn = setTimeout(async () => {
+      const comicsData = await fetchAPIData({ titleStartsWith: searchTerm })
+      const collectionCards = mainCardsMapper(comicsData)
+      setCollection(collectionCards)
+      setPagination({
+        offset: comicsData.data.offset,
+        total: comicsData.data.total
+      })
+      setSearchLoading(false)
+    }, 3000)
+
+    return () => clearTimeout(delayDebounceFn)
+  }, [searchTerm])
 
   return (
     <>
@@ -91,6 +122,10 @@ export function Home() {
                   placeholder={'Busque sua comics'}
                   inputHeight={'small'}
                   outsideIcon={true}
+                  onInputChange={(term) => {
+                    setSearchLoading(true)
+                    setSearchTerm(term)
+                  }}
                 />
               </S.CollectionHeaderWrapper>
               <S.CollectionItemsWrapper>
@@ -103,7 +138,37 @@ export function Home() {
                     title={card.title}
                   />
                 ))}
+                {searchLoading && (
+                  <S.LoadingBackground>
+                    <Spinner />
+                  </S.LoadingBackground>
+                )}
               </S.CollectionItemsWrapper>
+              <S.PaginationWrapper>
+                <Pagination
+                  numberOfPages={Math.floor(pagination.total / 20)}
+                  onPageChange={async (pageNumber) => {
+                    setSearchLoading(true)
+                    const comicsData = await fetchAPIData(
+                      !searchTerm || searchTerm === ''
+                        ? {
+                            offset: (pageNumber - 1) * 20
+                          }
+                        : {
+                            offset: (pageNumber - 1) * 20,
+                            titleStartsWith: searchTerm
+                          }
+                    )
+                    const collectionCards = mainCardsMapper(comicsData)
+                    setCollection(collectionCards)
+                    setPagination({
+                      offset: comicsData.data.offset,
+                      total: comicsData.data.total
+                    })
+                    setSearchLoading(false)
+                  }}
+                />
+              </S.PaginationWrapper>
             </Container>
           </S.CollectionWrapper>
           <S.FooterWrapper>

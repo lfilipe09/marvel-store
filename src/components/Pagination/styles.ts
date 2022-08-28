@@ -20,7 +20,7 @@ export const Input = styled.input`
   ${({ theme }) => css`
     border: 0.5px solid ${theme.colors.lightGray};
     background: transparent;
-    max-width: 3rem;
+    max-width: 6rem;
     color: ${theme.colors.white};
     border-radius: 0.2rem;
     text-align: center;
