@@ -7,6 +7,7 @@ import Logo from '../Logo'
 import * as S from './styles'
 import Button from '../Button'
 import MediaMatch from '../../components/MediaMatch'
+import Dropdown from 'components/Dropdown'
 
 export type MenuProps = {
   username?: string | null
@@ -24,6 +25,7 @@ const Menu = ({ loading }: MenuProps) => {
           <MenuIcon aria-label="Open Menu" />
         </S.IconWrapper>
       </MediaMatch>
+      <Dropdown />
 
       <S.LogoWrapper>
         <a href="/">

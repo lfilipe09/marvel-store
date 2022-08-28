@@ -32,10 +32,17 @@ export const Image = styled.img`
   width: 10rem;
 `
 
-export const UserName = styled.h2``
+export const UserName = styled.h2`
+  ${() => css`
+    color: #fff;
+  `}
+`
 
 export const UserEmail = styled.p`
-  margin-top: 1rem;
+  ${() => css`
+    color: #fff;
+    margin-top: 1rem;
+  `}
 `
 
 export const UserRegisterDate = styled.p`

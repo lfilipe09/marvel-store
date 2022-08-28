@@ -60,7 +60,7 @@ export const TitleWrapper = styled.div`
 export const Title = styled.h2`
   ${({ theme }) => css`
     font-size: ${theme.font.sizes.small};
-    color: ${theme.colors.white};
+    color: #fff;
     line-height: 1.8rem; ;
   `}
 `

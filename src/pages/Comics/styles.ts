@@ -67,6 +67,7 @@ export const MainInfo = styled.div`
 
 export const Description = styled.div`
   ${({ theme }) => css`
+    color: ${theme.colors.black};
     div {
       font-size: ${theme.font.sizes.medium};
     }
@@ -76,6 +77,7 @@ export const Description = styled.div`
 export const VariantDescription = styled.div`
   ${({ theme }) => css`
     padding-top: 1rem;
+    color: ${theme.colors.black};
     border-top: 1px solid ${theme.colors.black};
     div {
       font-size: ${theme.font.sizes.medium};
@@ -91,19 +93,21 @@ export const IconGroupWrapper = styled.div`
 `
 
 export const IconTitleWrapper = styled.div`
-  ${() => css`
+  ${({ theme }) => css`
     display: grid;
     grid-template-columns: 34px 3fr;
     align-items: center;
     svg {
       width: 2rem;
+      stroke: ${theme.colors.black};
     }
   `}
 `
 
 export const IconTextContent = styled.div`
-  ${() => css`
+  ${({ theme }) => css`
     display: flex;
+    color: ${theme.colors.black};
     flex-direction: column;
     grid-gap: 0.4rem;
   `}
@@ -111,6 +115,7 @@ export const IconTextContent = styled.div`
 
 export const IconTitle = styled.p`
   ${({ theme }) => css`
+    color: ${theme.colors.black};
     text-transform: uppercase;
     font-weight: 600;
     font-size: ${theme.font.sizes.xsmall};
@@ -119,6 +124,7 @@ export const IconTitle = styled.p`
 
 export const IconDescription = styled.p`
   ${({ theme }) => css`
+    color: ${theme.colors.black};
     font-size: ${theme.font.sizes.medium};
   `}
 `
@@ -141,7 +147,10 @@ export const CreatorInfoWrapper = styled.div`
 `
 
 export const CreatorTitle = styled.p`
-  font-size: 1.6rem;
+  ${({ theme }) => css`
+    color: ${theme.colors.black};
+    font-size: 1.6rem;
+  `}
 `
 
 export const CreatorMainWrapper = styled.div`

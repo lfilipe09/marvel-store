@@ -1,5 +1,5 @@
 export default {
-  title: 'light',
+  title: 'red',
   grid: {
     container: '130rem',
     gutter: '3.2rem'
@@ -33,6 +33,16 @@ export default {
     lightGray: '#EAEAEA',
     gray: '#8F8F8F',
     darkGray: '#2E2F42'
+  },
+  gradients: {
+    grayGradient:
+      'linear-gradient(50deg, rgb(31 31 33) 0%, rgb(70 71 79) 100%)',
+    blackMainDesktopGradient:
+      'linear-gradient(45deg, rgba(236, 29, 36,1) 0%, rgba(236, 29, 36,1) 30%, rgba(236, 29, 36,0) 100%)',
+    blackSecondaryDesktopGradient:
+      'linear-gradient(90deg, rgba(236, 29, 36,1) 0%, rgba(236, 29, 36,1) 70%, rgba(236, 29, 36,0) 100%)',
+    blackMobileGradient:
+      'linear-gradient(8deg, rgba(236, 29, 36,1) 0%, rgba(236, 29, 36,1) 82%, rgba(236, 29, 36,0) 100%)'
   },
   spacings: {
     xxsmall: '0.8rem',

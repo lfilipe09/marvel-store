@@ -162,7 +162,6 @@ export function Home() {
                 <Pagination
                   numberOfPages={Math.ceil(pagination.total / 30)}
                   onPageChange={async (pageNumber) => {
-                    console.log()
                     setSearchLoading(true)
                     const comicsData = await fetchAPIData(
                       !searchTerm || searchTerm === ''

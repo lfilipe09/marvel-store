@@ -43,19 +43,16 @@ export const Text = styled.p`
 `
 
 export const Wrapper = styled.div`
-  width: 100%;
-  min-height: 100vh;
-  background: linear-gradient(
-    45deg,
-    rgba(236, 29, 36, 1) 0%,
-    rgba(236, 29, 36, 1) 30%,
-    rgba(236, 29, 36, 0) 100%
-  );
-  ${media.lessThan('medium')`
-      background: linear-gradient(8deg, rgba(236, 29, 36,1) 0%, rgba(236, 29, 36,1) 82%, rgba(236, 29, 36,0) 100%);
+  ${({ theme }) => css`
+    width: 100%;
+    min-height: 100vh;
+    background: ${theme.gradients.blackMainDesktopGradient};
+    ${media.lessThan('medium')`
+      background: ${theme.gradients.blackMobileGradient};
     `}
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
+  `}
 `
 
 export const WrapperImg = styled.div`

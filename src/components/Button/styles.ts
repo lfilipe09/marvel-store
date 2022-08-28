@@ -103,7 +103,7 @@ export const Wrapper = styled.button<WrapperProps>`
       z-index: -1;
     }
     &:hover {
-      color: #fff;
+      color: ${theme.colors.white};
       &:before {
         width: 100%;
       }

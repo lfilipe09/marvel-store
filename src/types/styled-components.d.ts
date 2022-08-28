@@ -37,6 +37,12 @@ declare module 'styled-components' {
       gray: string
       darkGray: string
     }
+    gradients: {
+      grayGradient: string
+      blackMainDesktopGradient: string
+      blackSecondaryDesktopGradient: string
+      blackMobileGradient: string
+    }
     spacings: {
       xxsmall: string
       xsmall: string

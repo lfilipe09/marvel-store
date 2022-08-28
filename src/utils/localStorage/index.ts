@@ -11,7 +11,7 @@ export function getStorageItem(key: string) {
   return JSON.parse(data!)
 }
 
-export function setStorageItem(key: string, value: Auth | User[]) {
+export function setStorageItem(key: string, value: Auth | User[] | string) {
   if (typeof window === 'undefined') return
 
   const data = JSON.stringify(value)
