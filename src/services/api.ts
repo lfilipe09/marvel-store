@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export const api = axios.create({
-  baseURL: `http://gateway.marvel.com/v1/public/comics?ts=1&apikey=${process.env.REACT_APP_PUBLIC_KEY}&hash=${process.env.REACT_APP_MD5_DIGEST}`
+  baseURL: `https://gateway.marvel.com/v1/public/comics?ts=1&apikey=${process.env.REACT_APP_PUBLIC_KEY}&hash=${process.env.REACT_APP_MD5_DIGEST}`
 })
 
 type FetchAPIDataProps = {
@@ -26,11 +26,11 @@ export const fetchAPIData = async ({
   characterId
 }: FetchAPIDataProps) => {
   const comicData = await api.get(
-    `http://gateway.marvel.com/v1/public/comics${comicId ? `/${comicId}` : ''}${
-      creatorId ? `/${creatorId}/creators` : ''
-    }${characterId ? `/${characterId}/characters` : ''}?ts=1&${
-      offset ? `offset=${offset}&` : ''
-    }${
+    `https://gateway.marvel.com/v1/public/comics${
+      comicId ? `/${comicId}` : ''
+    }${creatorId ? `/${creatorId}/creators` : ''}${
+      characterId ? `/${characterId}/characters` : ''
+    }?ts=1&${offset ? `offset=${offset}&` : ''}${
       titleStartsWith && titleStartsWith !== ''
         ? `titleStartsWith=${titleStartsWith}&`
         : ''
