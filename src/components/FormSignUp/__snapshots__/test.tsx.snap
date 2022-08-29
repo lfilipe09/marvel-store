@@ -1,0 +1,346 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FormSignUp /> should render the form 1`] = `
+<body>
+  <div>
+    <form
+      class="sc-jqUVSM eoyCmG"
+    >
+      <div
+        class="sc-kDDrLX cDvPVG"
+      >
+        <div
+          class="sc-papXJ MALAL"
+        >
+          <div
+            style="display: flex;"
+          >
+            <div
+              class="sc-gsnTZi llMrpL"
+            >
+              <div
+                class="sc-dkzDqf gMgHpB"
+              >
+                <label
+                  class="sc-jSMfEi gqUHrM"
+                  for="name"
+                >
+                  First name
+                </label>
+                <input
+                  class="sc-hKMtZM bwfWnC"
+                  id="name"
+                  name="name"
+                  placeholder="First name"
+                  type="text"
+                  value=""
+                />
+              </div>
+              <div
+                class="sc-gKXOVf hIWWIB"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="StyledIconBase-ea9ulj-0 lbJwfL"
+                  fill="none"
+                  focusable="false"
+                  height="1.5rem"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  viewBox="0 0 24 24"
+                  width="1.5rem"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"
+                  />
+                  <circle
+                    cx="12"
+                    cy="7"
+                    r="4"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="sc-papXJ MALAL"
+        >
+          <div
+            style="display: flex;"
+          >
+            <div
+              class="sc-gsnTZi llMrpL"
+            >
+              <div
+                class="sc-dkzDqf gMgHpB"
+              >
+                <label
+                  class="sc-jSMfEi gqUHrM"
+                  for="surname"
+                >
+                  Last name
+                </label>
+                <input
+                  class="sc-hKMtZM bwfWnC"
+                  id="surname"
+                  name="surname"
+                  placeholder="Last name"
+                  type="text"
+                  value=""
+                />
+              </div>
+              <div
+                class="sc-gKXOVf hIWWIB"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="StyledIconBase-ea9ulj-0 lbJwfL"
+                  fill="none"
+                  focusable="false"
+                  height="1.5rem"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  viewBox="0 0 24 24"
+                  width="1.5rem"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"
+                  />
+                  <circle
+                    cx="12"
+                    cy="7"
+                    r="4"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="sc-papXJ MALAL"
+      >
+        <div
+          style="display: flex;"
+        >
+          <div
+            class="sc-gsnTZi llMrpL"
+          >
+            <div
+              class="sc-dkzDqf gMgHpB"
+            >
+              <label
+                class="sc-jSMfEi gqUHrM"
+                for="cpf"
+              >
+                CPF
+              </label>
+              <input
+                class="sc-eCYdqJ jLCAfP"
+                id="cpf"
+                name="cpf"
+                placeholder="000.000.000-00"
+                type="text"
+                value=""
+              />
+            </div>
+            <div
+              class="sc-gKXOVf hIWWIB"
+            >
+              <svg
+                aria-hidden="true"
+                class="StyledIconBase-ea9ulj-0 lbJwfL"
+                fill="none"
+                focusable="false"
+                height="1.5rem"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                viewBox="0 0 24 24"
+                width="1.5rem"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <line
+                  x1="4"
+                  x2="20"
+                  y1="9"
+                  y2="9"
+                />
+                <line
+                  x1="4"
+                  x2="20"
+                  y1="15"
+                  y2="15"
+                />
+                <line
+                  x1="10"
+                  x2="8"
+                  y1="3"
+                  y2="21"
+                />
+                <line
+                  x1="16"
+                  x2="14"
+                  y1="3"
+                  y2="21"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="sc-papXJ MALAL"
+      >
+        <div
+          style="display: flex;"
+        >
+          <div
+            class="sc-gsnTZi llMrpL"
+          >
+            <div
+              class="sc-dkzDqf gMgHpB"
+            >
+              <label
+                class="sc-jSMfEi gqUHrM"
+                for="email"
+              >
+                E-mail
+              </label>
+              <input
+                class="sc-hKMtZM bwfWnC"
+                id="email"
+                name="email"
+                placeholder="email@example.com"
+                type="text"
+                value=""
+              />
+            </div>
+            <div
+              class="sc-gKXOVf hIWWIB"
+            >
+              <svg
+                aria-hidden="true"
+                class="StyledIconBase-ea9ulj-0 lbJwfL"
+                fill="none"
+                focusable="false"
+                height="1.5rem"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                viewBox="0 0 24 24"
+                width="1.5rem"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="4"
+                />
+                <path
+                  d="M16 8v5a3 3 0 006 0v-1a10 10 0 10-3.92 7.94"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="sc-papXJ MALAL"
+      >
+        <div
+          style="display: flex;"
+        >
+          <div
+            class="sc-gsnTZi llMrpL"
+          >
+            <div
+              class="sc-dkzDqf gMgHpB"
+            >
+              <label
+                class="sc-jSMfEi gqUHrM"
+                for="password"
+              >
+                Password
+              </label>
+              <input
+                class="sc-hKMtZM bwfWnC"
+                id="password"
+                name="password"
+                placeholder="type here your password"
+                type="password"
+                value=""
+              />
+            </div>
+            <div
+              class="sc-gKXOVf hIWWIB"
+            >
+              <svg
+                aria-hidden="true"
+                class="StyledIconBase-ea9ulj-0 lbJwfL"
+                fill="none"
+                focusable="false"
+                height="1.5rem"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                viewBox="0 0 24 24"
+                width="1.5rem"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  height="11"
+                  rx="2"
+                  ry="2"
+                  width="18"
+                  x="3"
+                  y="11"
+                />
+                <path
+                  d="M7 11V7a5 5 0 0110 0v4"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="sc-iqcoie hOkWGO"
+      >
+        <button
+          class="sc-bczRLJ cUwYPI"
+          color="black"
+          disabled=""
+          type="submit"
+        >
+          <span>
+            Create account
+          </span>
+          <svg
+            aria-hidden="true"
+            class="StyledIconBase-ea9ulj-0 lbJwfL"
+            fill="none"
+            focusable="false"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="4"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <polyline
+              points="9 18 15 12 9 6"
+            />
+          </svg>
+        </button>
+      </div>
+    </form>
+  </div>
+</body>
+`

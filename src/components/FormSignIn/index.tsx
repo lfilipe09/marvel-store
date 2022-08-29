@@ -59,7 +59,7 @@ const FormSignIn = ({ onSubmit, error }: FormSignInProps) => {
         label={'Password'}
         name={'password'}
         icon={<Lock size={'1.5rem'} />}
-        placeholder={'Insira sua senha'}
+        placeholder={'Put your password'}
         password={true}
         error={fieldError?.password}
         onInputChange={(v) => {

@@ -84,7 +84,7 @@ exports[`<FormSignIn /> should render the form 1`] = `
                 class="sc-hKMtZM bwfWnC"
                 id="password"
                 name="password"
-                placeholder="Insira sua senha"
+                placeholder="Put your password"
                 type="password"
                 value=""
               />

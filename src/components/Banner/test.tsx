@@ -4,7 +4,8 @@ import { render, screen } from 'utils/test-utils'
 import Banner from '.'
 
 const props = {
-  imgUrl: 'https://source.unsplash.com/user/willianjusten/1042x580',
+  imgUrl:
+    'https://i.annihil.us/u/prod/marvel/i/mg/3/40/4bb4680432f73/detail.jpg',
   title: 'Defy death',
   subtitle: '<p>Play the new <strong>CrashLands</strong> season',
   buttonLabel: 'Buy now',

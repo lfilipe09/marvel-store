@@ -44,20 +44,20 @@ const FormSignUp = ({ onSubmit }: FormSignUpProps) => {
     <S.Wrapper onSubmit={handleSubmit}>
       <S.InputGroup>
         <TextField
-          label={'Nome'}
+          label={'First name'}
           name={'name'}
           icon={<User size={'1.5rem'} />}
-          placeholder={'Primeiro nome'}
+          placeholder={'First name'}
           error={fieldError?.name}
           onInputChange={(v) => {
             handleInput('name', v)
           }}
         />
         <TextField
-          label={'Sobrenome'}
+          label={'Last name'}
           name={'surname'}
           icon={<User size={'1.5rem'} />}
-          placeholder={'Último nome'}
+          placeholder={'Last name'}
           error={fieldError?.surname}
           onInputChange={(v) => {
             handleInput('surname', v)
@@ -92,10 +92,10 @@ const FormSignUp = ({ onSubmit }: FormSignUpProps) => {
         }}
       />
       <TextField
-        label={'Senha'}
+        label={'Password'}
         name={'password'}
         icon={<Lock size={'1.5rem'} />}
-        placeholder={'Insira sua senha'}
+        placeholder={'type here your password'}
         password={true}
         error={fieldError?.password}
         onInputChange={(v) => {
@@ -114,7 +114,7 @@ const FormSignUp = ({ onSubmit }: FormSignUpProps) => {
           type={'submit'}
           icon={<ChevronRight strokeWidth={4} width={'1rem'} />}
         >
-          Criar uma conta
+          Create account
         </Button>
       </S.ButtonWrapper>
     </S.Wrapper>
