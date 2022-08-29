@@ -1,0 +1,158 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FormSignIn /> should render the form 1`] = `
+<body>
+  <div>
+    <form
+      class="sc-crXcEl gOBewD"
+    >
+      <div
+        class="sc-papXJ MALAL"
+      >
+        <div
+          style="display: flex;"
+        >
+          <div
+            class="sc-gsnTZi llMrpL"
+          >
+            <div
+              class="sc-dkzDqf gMgHpB"
+            >
+              <label
+                class="sc-jSMfEi gqUHrM"
+                for="email"
+              >
+                E-mail
+              </label>
+              <input
+                class="sc-hKMtZM bwfWnC"
+                id="email"
+                name="email"
+                placeholder="email@example.com"
+                type="text"
+                value=""
+              />
+            </div>
+            <div
+              class="sc-gKXOVf hIWWIB"
+            >
+              <svg
+                aria-hidden="true"
+                class="StyledIconBase-ea9ulj-0 lbJwfL"
+                fill="none"
+                focusable="false"
+                height="1.5rem"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                viewBox="0 0 24 24"
+                width="1.5rem"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="4"
+                />
+                <path
+                  d="M16 8v5a3 3 0 006 0v-1a10 10 0 10-3.92 7.94"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="sc-papXJ MALAL"
+      >
+        <div
+          style="display: flex;"
+        >
+          <div
+            class="sc-gsnTZi llMrpL"
+          >
+            <div
+              class="sc-dkzDqf gMgHpB"
+            >
+              <label
+                class="sc-jSMfEi gqUHrM"
+                for="password"
+              >
+                Password
+              </label>
+              <input
+                class="sc-hKMtZM bwfWnC"
+                id="password"
+                name="password"
+                placeholder="Insira sua senha"
+                type="password"
+                value=""
+              />
+            </div>
+            <div
+              class="sc-gKXOVf hIWWIB"
+            >
+              <svg
+                aria-hidden="true"
+                class="StyledIconBase-ea9ulj-0 lbJwfL"
+                fill="none"
+                focusable="false"
+                height="1.5rem"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                viewBox="0 0 24 24"
+                width="1.5rem"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  height="11"
+                  rx="2"
+                  ry="2"
+                  width="18"
+                  x="3"
+                  y="11"
+                />
+                <path
+                  d="M7 11V7a5 5 0 0110 0v4"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="sc-breuTD beNTTS"
+      >
+        <button
+          class="sc-bczRLJ cUwYPI"
+          color="black"
+          disabled=""
+          type="submit"
+        >
+          <span>
+            Access platform
+          </span>
+          <svg
+            aria-hidden="true"
+            class="StyledIconBase-ea9ulj-0 lbJwfL"
+            fill="none"
+            focusable="false"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <polyline
+              points="9 18 15 12 9 6"
+            />
+          </svg>
+        </button>
+      </div>
+    </form>
+  </div>
+</body>
+`

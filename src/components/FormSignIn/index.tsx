@@ -56,7 +56,7 @@ const FormSignIn = ({ onSubmit, error }: FormSignInProps) => {
         }}
       />
       <TextField
-        label={'Senha'}
+        label={'Password'}
         name={'password'}
         icon={<Lock size={'1.5rem'} />}
         placeholder={'Insira sua senha'}
@@ -72,7 +72,7 @@ const FormSignIn = ({ onSubmit, error }: FormSignInProps) => {
           type={'submit'}
           icon={<ChevronRight strokeWidth={2} width={'1rem'} />}
         >
-          Acessar a plataforma
+          Access platform
         </Button>
       </S.ButtonWrapper>
     </S.Wrapper>
