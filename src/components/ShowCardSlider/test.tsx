@@ -2,7 +2,7 @@ import React from 'react'
 import '../../../.jest/match-media-mock'
 import { render, screen } from 'utils/test-utils'
 
-import ComicCardSlider from '.'
+import ShowCardSlider from '.'
 const items = [
   {
     title: 'example',
@@ -48,22 +48,20 @@ const items = [
   }
 ]
 
-describe('<ComicCardSlider />', () => {
-  it('should render with 6 active items', () => {
-    const { container } = render(
-      <ComicCardSlider color="black" items={items} />
-    )
-    expect(container.querySelectorAll('.slick-active')).toHaveLength(6)
+describe('<ShowCardSlider />', () => {
+  it('should render with 2 active items', () => {
+    const { container } = render(<ShowCardSlider color="black" items={items} />)
+    expect(container.querySelectorAll('.slick-active')).toHaveLength(2)
   })
 
   it('should render white arrows if color passed', () => {
-    render(<ComicCardSlider items={items} color="white" />)
+    render(<ShowCardSlider items={items} color="white" />)
 
     expect(screen.getByLabelText(/previous games/i)).toHaveStyle({
-      color: '#FAFAFA'
+      color: 'rgb(3, 5, 23)'
     })
     expect(screen.getByLabelText(/next games/i)).toHaveStyle({
-      color: '#FAFAFA'
+      color: 'rgb(3, 5, 23)'
     })
   })
 })
