@@ -34,7 +34,7 @@ const Signup = () => {
             </Heading>
           </S.MainTitle>
           <S.Text>
-            Ja possui um cadastro? <a href="/login">Faça o login</a>
+            Already have a registration? <a href="/login">Go to login</a>
           </S.Text>
           <S.FormWrapper>
             <FormSignUp

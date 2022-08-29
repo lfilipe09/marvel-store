@@ -36,7 +36,7 @@ const Login = () => {
             </Heading>
           </S.MainTitle>
           <S.Text>
-            Não possui um cadastro? <a href="/signup">Faça o cadastro aqui</a>
+            Don&apos;t have a registration? <a href="/signup">Click here</a>
           </S.Text>
           <S.FormWrapper>
             <FormSignIn
@@ -44,9 +44,7 @@ const Login = () => {
               onSubmit={(value) => {
                 const data = validateUser(value.email, value.password)
                 if (data === null) {
-                  setErrorMessage(
-                    'Não foi encontrado nenhum usuário com esses dados'
-                  )
+                  setErrorMessage('No user was found with this data')
                 } else {
                   createAuth(value.email)
                   navigate('/')

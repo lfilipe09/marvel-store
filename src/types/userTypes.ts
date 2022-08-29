@@ -21,7 +21,7 @@ export interface User {
   wishlist: WishlistUser[]
 }
 
-export type UserForm = Omit<User, 'id' | 'activity' | 'created_at' | 'wishlist'>
+export type UserForm = Omit<User, 'id' | 'created_at' | 'wishlist'>
 
 export type UserFormSignIn = Omit<
   UserForm,

@@ -11,8 +11,8 @@ export const heroBannerMapper = (comicsData: APIComics) => {
       ? 'https://i.ibb.co/gZk8B85/marvel-empty-Prancheta-1.png'
       : `${comic.thumbnail.path}/detail.${comic.thumbnail.extension}`,
     title: comic.title,
-    subtitle: `<p>Leia agora <strong>${comic.title}</strong> disponível online`,
-    buttonLabel: 'Saiba mais',
+    subtitle: `<p>Read now <strong>${comic.title}</strong> check it online`,
+    buttonLabel: 'Read more',
     buttonLink: `comics/${comic.id}/${convertToSlug(comic.title)}`
   }))
 }

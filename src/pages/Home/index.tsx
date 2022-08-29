@@ -108,7 +108,7 @@ export function Home() {
           <Container>
             <S.SliderTitleWrapper>
               <Heading size={'huge'} color={'black'}>
-                Principais lançamentos
+                Main releases
               </Heading>
               <ComicCardSlider
                 color={'black'}
@@ -119,7 +119,7 @@ export function Home() {
           <Container>
             <S.SliderTitleWrapper>
               <Heading size={'huge'} color={'black'}>
-                Confira também:{' '}
+                Also check:{' '}
               </Heading>
               <ComicCardSlider
                 color={'black'}

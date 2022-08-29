@@ -23,15 +23,15 @@ Minimum eight in length .{8,} (with the anchors)
 */
 
 export const name_schema = Joi.string().min(3).required().messages({
-  'string.empty': `O Nome não pode ser vazio`,
-  'string.min': `O Nome precisa ter no mínimo 3 dígitos`,
-  'any.required': `O campo Nome é obrigatório`
+  'string.empty': `Name cannot be empty`,
+  'string.min': `Name must be at least 3 digits`,
+  'any.required': `The name field is required`
 })
 
 export const surname_schema = Joi.string().min(3).required().messages({
-  'string.empty': `O Sobrenome não pode ser vazio`,
-  'string.min': `O Sobrenome precisa ter no mínimo 3 dígitos`,
-  'any.required': `O campo Sobrenome é obrigatório`
+  'string.empty': `Last name cannot be empty`,
+  'string.min': `Last name must be at least 3 digits long`,
+  'any.required': `Last Name field is required`
 })
 
 export const cpf_schema = Joi.string()
@@ -39,10 +39,10 @@ export const cpf_schema = Joi.string()
   .required()
   .pattern(CPFValidation)
   .messages({
-    'string.empty': `O CPF não pode ser vazio`,
-    'string.min': `O CPF precisa ter no mínimo 11 dígitos`,
-    'string.pattern.base': 'Esse não é um CPF válido',
-    'any.required': `O campo CPF é obrigatório`
+    'string.empty': `CPF cannot be empty`,
+    'string.min': `The CPF must have at least 11 digits`,
+    'string.pattern.base': 'This is not a valid CPF',
+    'any.required': `The CPF field is required`
   })
 
 export const email_schema = Joi.string()
@@ -50,10 +50,10 @@ export const email_schema = Joi.string()
   .required()
   .pattern(EmailValidation)
   .messages({
-    'string.empty': `O email não pode ser vazio`,
-    'string.min': `O email precisa ter no mínimo 5 dígitos`,
-    'string.pattern.base': 'Esse não é um email válido',
-    'any.required': `O campo email é obrigatório`
+    'string.empty': `Email cannot be empty`,
+    'string.min': `Email must be at least 5 digits`,
+    'string.pattern.base': 'This is not a valid email',
+    'any.required': `The email field is required`
   })
 
 export const password_schema = Joi.string()
@@ -61,9 +61,9 @@ export const password_schema = Joi.string()
   .required()
   .pattern(PasswordValidation)
   .messages({
-    'string.empty': `A senha não pode ser vazia`,
-    'string.min': `A senha precisa ter no mínimo 8 dígitos`,
+    'string.empty': `Password cannot be empty`,
+    'string.min': `Password must be at least 8 digits long`,
     'string.pattern.base':
-      'Essa não é uma senha válida. Precisa ter no mínimo: 8 dígitos, 1 maiúscula, 1 minúscula, 1 número, 1 caracter especial',
-    'any.required': `O campo senha é obrigatório`
+      'This is not a valid password. Must be at least: 8 digits, 1 uppercase, 1 lowercase, 1 number, 1 special character',
+    'any.required': `The password field is required`
   })
