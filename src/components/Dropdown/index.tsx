@@ -18,6 +18,7 @@ const Dropdown = () => {
           return (
             theme !== customTheme && (
               <S.Button
+                key={theme}
                 onClick={() => {
                   console.log('executou', theme)
                   setIsOpen(false)
