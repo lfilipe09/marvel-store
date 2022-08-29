@@ -12,7 +12,7 @@ const Footer = () => (
       </S.Column>
       <S.Column id="social-media" aria-labelledby="social media">
         <Heading color="black" size="small">
-          Mídias sociais
+          Social media
         </Heading>
 
         <nav id="social-media">
@@ -49,7 +49,7 @@ const Footer = () => (
 
       <S.Column aria-label="contact">
         <Heading color="black" size="small">
-          Endereço
+          Address
         </Heading>
         <span>135 W 50th St. New York, NY 10020, USA.</span>
         <span>+1 212-576-4000</span>
