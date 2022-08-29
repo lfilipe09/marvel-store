@@ -15,6 +15,7 @@ exports[`<Footer /> should render 2 column topics 1`] = `
         color="primary"
       >
         <svg
+          aria-label="Marvel"
           viewBox="-215.19 -86.608 1000 402.473"
           xml:space="preserve"
           xmlns="http://www.w3.org/2000/svg"

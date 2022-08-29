@@ -12,6 +12,7 @@ const Logo = ({ color = 'primary', size = 'normal' }: LogoProps) => (
       xmlns="http://www.w3.org/2000/svg"
       viewBox="-215.19 -86.608 1000 402.473"
       xmlSpace="preserve"
+      aria-label="Marvel"
     >
       <path
         fill={
