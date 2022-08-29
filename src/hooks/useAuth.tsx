@@ -17,6 +17,15 @@ export type AuthProps = {
   createAuth: (userEmail: string) => void
 }
 
+export const AuthInitialValues = {
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  getAuth: () => null,
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  validateAuth: () => true,
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  createAuth: () => {}
+}
+
 export const AuthContext = createContext<AuthProps>({} as AuthProps)
 
 export function AuthProvider({ children }: AuthProviderProps) {
